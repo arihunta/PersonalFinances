@@ -8,14 +8,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.google.common.io.Resources;
 
-public class Data {
+import lombok.extern.log4j.Log4j2;
 
-    private static final Logger logger = LogManager.getLogger(Data.class);
+@Log4j2
+public class Data {
 
     static final Path DATA_DIR = Paths.get("./data/");
     static final Path PDF_DIR = DATA_DIR.resolve("pdf");
@@ -46,7 +44,7 @@ public class Data {
             CSV_FILES_NEW_FORMAT.addAll(
                     Resources.readLines(Resources.getResource("csv-filenames-new.txt"), StandardCharsets.UTF_8));
         } catch (IOException e) {
-            logger.error("Error loading data", e);
+            log.error("Error loading data", e);
         }
         OLD_PASSWORD = oldPassword;
         NEW_PASSWORD = newPassword;
