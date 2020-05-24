@@ -4,6 +4,4 @@
 
 bin/
 build/
-
-src/main/resources/*
-!src/main/resources/log4j2.xml
+data/

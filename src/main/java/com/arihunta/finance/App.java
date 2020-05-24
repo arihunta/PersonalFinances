@@ -10,6 +10,9 @@ public class App {
     public static void main(String[] args) {
 
         logger.info("Hello app");
+//        PdfProcessing.extractTransactions();
+        TxtProcessing.parseOldFiles();
+        TxtProcessing.parseNewFiles();
 
     }
 
