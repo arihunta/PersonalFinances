@@ -15,7 +15,7 @@ public class Transaction
     private final String type;
     private final String description;
     private final double accountBalance;
-    private final List<Tag> tags;
+    private final List<String> tags;
 
     private final String rawText;
 

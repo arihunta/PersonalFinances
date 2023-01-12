@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import com.arihunta.finance.model.Tag;
 import com.arihunta.finance.model.Transaction;
 import com.google.common.collect.Lists;
 
@@ -243,7 +242,7 @@ public class TxtProcessing
         final String type = data[0];
         final String description = data[9];
         final double accountBalance = Double.parseDouble(data[7]) * (data[8].equals("-") ? -1 : 1);
-        final List<Tag> tags = new ArrayList<>();
+        final List<String> tags = new ArrayList<>();
 
         final Transaction transaction = new Transaction(statementDate, actualDate, amount, type,
                 description, accountBalance, tags, csvLine);

@@ -23,6 +23,7 @@ public class PdfProcessing
     public static void extractPdfTxt() {
         Data.PDF_FILES_OLD_PWD.stream().forEach(it -> extractPdfTxt(it, Data.OLD_PASSWORD));
         Data.PDF_FILES_NEW_PWD.stream().forEach(it -> extractPdfTxt(it, Data.NEW_PASSWORD));
+        Data.PDF_FILES_NEWER_PWD.stream().forEach(it -> extractPdfTxt(it, Data.NEWER_PASSWORD));
     }
 
     public static void extractPdfTxt(final String fileName, final String password) {
@@ -48,7 +49,7 @@ public class PdfProcessing
     }
 
     public static void extractTransactions() {
-        Streams.concat(Data.PDF_FILES_OLD_PWD.stream(), Data.PDF_FILES_NEW_PWD.stream()) //
+        Streams.concat(Data.PDF_FILES_OLD_PWD.stream(), Data.PDF_FILES_NEW_PWD.stream(), Data.PDF_FILES_NEWER_PWD.stream()) //
                 .map(it -> it.replace(".pdf", ".csv")) //
                 .forEach(fileName -> extractTransactions(fileName)) //
         ;
